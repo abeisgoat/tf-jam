@@ -70,13 +70,13 @@ public class BallSpawnerController : MonoBehaviour
 			var bc = ball.GetComponent<BallController>();
 			bc.Force = new Vector3(
 				dir.x * arch * closeness,
-				force,//* (1f / closeness)
+				force,//* (1f / closeness) Optional: Uncomment this to experiment with artificial shot arcs!
 				dir.y * arch * closeness
 			);
 			bc.Distance = dist;
 			
 			yield return new WaitForSeconds(0.02f);
-			MoveToRandomDistance();
+			// MoveToRandomDistance();
 		}
 	}
 
